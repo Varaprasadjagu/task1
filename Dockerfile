@@ -1,5 +1,4 @@
-FROM ubuntu
-RUN apt update -y
-RUN apt install apache2 -y
+FROM centos:centos7
+RUN yum install httpd -y
 copy index.html /var/www/html
-CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
